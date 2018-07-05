@@ -1,15 +1,13 @@
+[toc]
 总结了下python常见的两种定时器，一种是比较轻量级的schedule，另外一种是比较健全的celery
 环境：python2.7
-
-
-1.schedule
-2.celery
-2.1定时任务
-1.schedule
+# 1.schedule
 schedule是一种轻量级的模块，在实现比较小的定时任务的时候可以放弃celery转而使用schedule
 下面介绍一下使用方法
+新建一个schedule.py文件
+```
 # -*- coding: utf-8 -*-
-# @Author: MengYu
+# @Author: MengYu'
 import time
 import schedule
 import os
@@ -23,14 +21,15 @@ def data_handle():
     os.system("python data_handler.py")
 
 
-schedule.every().day.at("09:00").do(lpush)   # 每天早上九点执行一次
-schedule.every().monday.at("10:00").do(data_handle) # 每周一上午十点执行一次
+schedule.every().day.at("09:00").do(lpush)
+schedule.every().monday.at("10:00").do(data_handle)
 
-# 为了保持schedule模块执行，所以使用死循环
 while True:
     schedule.run_pending()
     time.sleep(1)
-2.celery
+
+```
+# 2.celery
 Celery 是一个强大的分布式任务队列，它可以让任务的执行完全脱离主程序，甚至可以被分配到其他主机上运行。我们通常使用它来实现异步任务（ async task ）和定时任务（ crontab ）。
 Celery 主要包含以下几个模块：
 任务模块
@@ -41,15 +40,18 @@ Broker ，即为任务调度队列，接收任务生产者发来的消息（即任务），将任务存入队列。 
 Worker 是执行任务的处理单元，它实时监控消息队列，获取队列中调度的任务，并执行它。
 任务结果存储 Backend
 Backend 用于存储任务的执行结果，以供查询。同消息中间件一样，存储也可使用 RabbitMQ, Redis 和 MongoDB 等。
-2.1定时任务
+## 2.1定时任务
 Celery 除了可以执行异步任务，也支持执行周期性任务（ Periodic Tasks ），或者说定时任务。 Celery Beat 进程通过读取配置文件的内容，周期性地将定时任务发往任务队列
-文件目录如下celery_demo                    # 项目根目录
+文件目录如下：
+celery_demo                    # 项目根目录
+
     ├── celery_task             # 存放 celery 相关文件
         ├── __init__.py
         ├── celeryconfig.py    # 配置文件
-        ├── task1.py           # 任务文件
-
+        ├── obtain_data_task.py     # 任务文件
+        
 __init__.py文件如下：
+```
 # coding:utf-8
 # @Author: MengYu
 from __future__ import absolute_import
@@ -58,8 +60,9 @@ from celery import Celery
 app = Celery('celery_task')
 # 指定配置文件的位置
 app.config_from_object('celery_task.celeryconfig')
-
+```
 celeryconfig.py文件如下：
+```
 # coding:utf-8
 # @Author: MengYu
 from datetime import timedelta
@@ -86,7 +89,9 @@ CELERYBEAT_SCHEDULE = {
         'schedule': timedelta(seconds=30),
     },
 }
-task1.py代码如下：
+```
+obtain_data_task.py文件如下：
+```
 # coding:utf-8
 # @Author: MengYu
 import os
@@ -98,18 +103,20 @@ from celery_task import app
 def crawl():
     """celery -B -A celery_task --loglevel=info"""
     print '*'*20
-    # 要执行的shell命令 
     os.system("python run.py")
 
 if __name__ == '__main__':
     crawl()
-
+```
 现在，让我们启动 Celery Worker 进程，在项目的根目录下执行下面命令：
- celery -A celery_task worker --loglevel=info
+```
+celery -A celery_task worker --loglevel=info
+ ```
 接着，启动 Celery Beat 进程，定时将任务发送到 Broker ，在项目根目录下执行下面命令：
+```
 celery beat -A celery_task
+```
 在上面，我们用两个命令启动了 Worker 进程和 Beat 进程，我们也可以将它们放在一个命令中：
-$ celery -B -A celery_task worker --loglevel=info
-
-
-
+```
+celery -B -A celery_task worker --loglevel=info
+```
