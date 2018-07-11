@@ -1,9 +1,9 @@
 # 1.tool commands
-scrapyµÄÒ»Ğ©ÔËĞĞÃüÁî
-## 1.1 ²é¿´ËùÓĞ¿ÉÓÃÃüÁî
+scrapyçš„ä¸€äº›è¿è¡Œå‘½ä»¤
+## 1.1 æŸ¥çœ‹æ‰€æœ‰å¯ç”¨å‘½ä»¤
 scrapy -h
 
-È«¾ÖÃüÁî£º
+å…¨å±€å‘½ä»¤ï¼š
  ```   
     startproject
     
@@ -20,7 +20,7 @@ scrapy -h
     version
  ```
 
-ÏîÄ¿£¨project-only£©ÃüÁî
+é¡¹ç›®ï¼ˆproject-onlyï¼‰å‘½ä»¤
 ```
     crawl
     check
@@ -30,77 +30,77 @@ scrapy -h
     genspider
     bench
 ```
-## 1.2´´½¨ÏîÄ¿
+## 1.2åˆ›å»ºé¡¹ç›®
 `scrapy startproject projectname`
 
-## 1.3Ê¹ÓÃspider½øĞĞÅÀÈ¡
+## 1.3ä½¿ç”¨spiderè¿›è¡Œçˆ¬å–
 `scrapy crawl spidername`
 
-## 1.4 ÔËĞĞcontract¼ì²é
-`scrapy check -l     ²é¿´ÓĞÄÇĞ©¿ÉÒÔ¼ì²âµÄ
+## 1.4 è¿è¡Œcontractæ£€æŸ¥
+`scrapy check -l     æŸ¥çœ‹æœ‰é‚£äº›å¯ä»¥æ£€æµ‹çš„
 scrapy check`
 
-## 1.5 ÁĞ³öµ±ÏÈÏîÄ¿ÖĞµÄËùÓĞ¿ÉÓÃµÄspider
+## 1.5 åˆ—å‡ºå½“å…ˆé¡¹ç›®ä¸­çš„æ‰€æœ‰å¯ç”¨çš„spider
 `scrapy list`
 
-## 1.6 Ê¹ÓÃEDITORÖĞÉè¶¨µÄ±à¼­Æ÷±à¼­¸ø¶¨µÄspider£¬¸ÃÃüÁîÖ»Ìá¹©Ò»¸ö¿ì½İ·½Ê½
+## 1.6 ä½¿ç”¨EDITORä¸­è®¾å®šçš„ç¼–è¾‘å™¨ç¼–è¾‘ç»™å®šçš„spiderï¼Œè¯¥å‘½ä»¤åªæä¾›ä¸€ä¸ªå¿«æ·æ–¹å¼
 `scrapy edit spidername`
 
-## 1.7 Ê¹ÓÃscrapyÏÂÔØÆ÷£¨Downloader£©ÏÂÔØ¸ø¶¨µÄurl£¬²¢½«»ñÈ¡µ½µÄÄÚÈİËÍµ½±ê×¼Êä³ö
+## 1.7 ä½¿ç”¨scrapyä¸‹è½½å™¨ï¼ˆDownloaderï¼‰ä¸‹è½½ç»™å®šçš„urlï¼Œå¹¶å°†è·å–åˆ°çš„å†…å®¹é€åˆ°æ ‡å‡†è¾“å‡º
 `scrapy fetch --nolog url
-    ÀıÈç£ºscrapy fetch --nolog http://www.baidu.com °ïÖúÎÒÃÇÏÂÔØÍøÒ³£¬½«ÍøÒ³Ô´´úÂë·µ»Ø`
+    ä¾‹å¦‚ï¼šscrapy fetch --nolog http://www.baidu.com å¸®åŠ©æˆ‘ä»¬ä¸‹è½½ç½‘é¡µï¼Œå°†ç½‘é¡µæºä»£ç è¿”å›`
     
-## 1.8 viewÇëÇóUrl,°ÑËüµÄÍøÒ³Ô´´úÂë±£´æ³ÉÎÄ¼ş£¬²¢´ò¿ªÍøÒ³
+## 1.8 viewè¯·æ±‚Url,æŠŠå®ƒçš„ç½‘é¡µæºä»£ç ä¿å­˜æˆæ–‡ä»¶ï¼Œå¹¶æ‰“å¼€ç½‘é¡µ
 `scrapy view url`
 
-ÔÚä¯ÀÀÆ÷ÖĞ´ò¿ª¸ø¶¨µÄurl£¬ ²¢ÒÔscrapy spider»ñÈ¡µ½µÄĞÎÊ½Õ¹ÏÖ£¬ÒÔ´ËÃüÁî¿ÉÒÔ¼ì²âspiderËù»ñÈ¡µ½µÄÒ³Ãæ£¬²¢È·ÈÏÕâÊÇËùÆÚÍûµÄÒ³Ãæ
+åœ¨æµè§ˆå™¨ä¸­æ‰“å¼€ç»™å®šçš„urlï¼Œ å¹¶ä»¥scrapy spiderè·å–åˆ°çš„å½¢å¼å±•ç°ï¼Œä»¥æ­¤å‘½ä»¤å¯ä»¥æ£€æµ‹spideræ‰€è·å–åˆ°çš„é¡µé¢ï¼Œå¹¶ç¡®è®¤è¿™æ˜¯æ‰€æœŸæœ›çš„é¡µé¢
     
-## 1.9 shell ÖÕ¶Ë
+## 1.9 shell ç»ˆç«¯
 `scrapy shell -s 'User-Agent'='...' url`
 
-## 1.10 ÃüÁîĞĞ½âÎöÒ³Ãæ
+## 1.10 å‘½ä»¤è¡Œè§£æé¡µé¢
 `scrapy parse url --callback parsename`
 
-ÒÔ¸ø¶¨µÄ½âÎöº¯Êı½âÎöurl£¬Èç¹û²»Ğ´callbackÔòÊ¹ÓÃÄ¬ÈÏµÄparseº¯Êı½âÎöurl
+ä»¥ç»™å®šçš„è§£æå‡½æ•°è§£æurlï¼Œå¦‚æœä¸å†™callbackåˆ™ä½¿ç”¨é»˜è®¤çš„parseå‡½æ•°è§£æurl
 
-Ö§³ÖµÄÑ¡Ïî£º
-* --spider=SPIDER: Ìø¹ı×Ô¶¯¼ì²âspider²¢Ç¿ÖÆÊ¹ÓÃÌØ¶¨µÄspider
-* --a NAME=VALUE: ÉèÖÃspiderµÄ²ÎÊı(¿ÉÄÜ±»ÖØ¸´)
-* --callback or -c: spiderÖĞÓÃÓÚ½âÎö·µ»Ø(response)µÄ»Øµ÷º¯Êı
-* --pipelines: ÔÚpipelineÖĞ´¦Àíitem
-* --rules or -r: Ê¹ÓÃ CrawlSpider ¹æÔòÀ´·¢ÏÖÓÃÀ´½âÎö·µ»Ø(response)µÄ»Øµ÷º¯Êı
-* --noitems: ²»ÏÔÊ¾ÅÀÈ¡µ½µÄitem
-* --nolinks: ²»ÏÔÊ¾ÌáÈ¡µ½µÄÁ´½Ó
-* --nocolour: ±ÜÃâÊ¹ÓÃpygments¶ÔÊä³ö×ÅÉ«
-* --depth or -d: Ö¸¶¨¸ú½øÁ´½ÓÇëÇóµÄ²ã´ÎÊı(Ä¬ÈÏ: 1)
-* --verbose or -v: ÏÔÊ¾Ã¿¸öÇëÇóµÄÏêÏ¸ĞÅÏ¢
+æ”¯æŒçš„é€‰é¡¹ï¼š
+* --spider=SPIDER: è·³è¿‡è‡ªåŠ¨æ£€æµ‹spiderå¹¶å¼ºåˆ¶ä½¿ç”¨ç‰¹å®šçš„spider
+* --a NAME=VALUE: è®¾ç½®spiderçš„å‚æ•°(å¯èƒ½è¢«é‡å¤)
+* --callback or -c: spiderä¸­ç”¨äºè§£æè¿”å›(response)çš„å›è°ƒå‡½æ•°
+* --pipelines: åœ¨pipelineä¸­å¤„ç†item
+* --rules or -r: ä½¿ç”¨ CrawlSpider è§„åˆ™æ¥å‘ç°ç”¨æ¥è§£æè¿”å›(response)çš„å›è°ƒå‡½æ•°
+* --noitems: ä¸æ˜¾ç¤ºçˆ¬å–åˆ°çš„item
+* --nolinks: ä¸æ˜¾ç¤ºæå–åˆ°çš„é“¾æ¥
+* --nocolour: é¿å…ä½¿ç”¨pygmentså¯¹è¾“å‡ºç€è‰²
+* --depth or -d: æŒ‡å®šè·Ÿè¿›é“¾æ¥è¯·æ±‚çš„å±‚æ¬¡æ•°(é»˜è®¤: 1)
+* --verbose or -v: æ˜¾ç¤ºæ¯ä¸ªè¯·æ±‚çš„è¯¦ç»†ä¿¡æ¯
 
-## 1.11 »ñÈ¡scrapyÉèÖÃ
+## 1.11 è·å–scrapyè®¾ç½®
 `scrapy setting -- get settings.py`
 
-´Ósettings.pyÖĞ»ñÈ¡ÉèÖÃ
+ä»settings.pyä¸­è·å–è®¾ç½®
 
-## 1.12 ÔÚÎ´´´½¨ÏîÄ¿µÄÇé¿öÏÂÔËĞĞÒ»¸ö±àĞ´ÏÂpythonÎÄ¼şÖĞµÄspider
+## 1.12 åœ¨æœªåˆ›å»ºé¡¹ç›®çš„æƒ…å†µä¸‹è¿è¡Œä¸€ä¸ªç¼–å†™ä¸‹pythonæ–‡ä»¶ä¸­çš„spider
 `scrapy runspider spidername.py`
 
-## 1.13 »ñÈ¡scrapy°æ±¾
+## 1.13 è·å–scrapyç‰ˆæœ¬
 `scrapy version`
 
-## 1.14 ÔËĞĞbenchmark²âÊÔ
+## 1.14 è¿è¡Œbenchmarkæµ‹è¯•
 `scrapy bench`
 
-¿ÉÒÔ¼ì²âscrapyÔÚµçÄÔÉÏ×î¿ìµÄÅÀÈ¡ËÙ¶È
+å¯ä»¥æ£€æµ‹scrapyåœ¨ç”µè„‘ä¸Šæœ€å¿«çš„çˆ¬å–é€Ÿåº¦
 
-# 2.×Ô¶¨ÒåÏîÄ¿ÃüÁî
+# 2.è‡ªå®šä¹‰é¡¹ç›®å‘½ä»¤
 
-¿ÉÒÔÍ¨¹ıCOMMANDS_MODULEÀ´Ìí¼Ó×Ô¼ºµÄÏîÄ¿ÃüÁî£¬ÈçÅÀÈ¡ËùÓĞµÄspider
-Í¨¹ıscrapy/commandsÖĞScrapy commandsÎªÀıÁË½âÈçºÎÊµÏÖÃüÁî¡£
+å¯ä»¥é€šè¿‡COMMANDS_MODULEæ¥æ·»åŠ è‡ªå·±çš„é¡¹ç›®å‘½ä»¤ï¼Œå¦‚çˆ¬å–æ‰€æœ‰çš„spider
+é€šè¿‡scrapy/commandsä¸­Scrapy commandsä¸ºä¾‹äº†è§£å¦‚ä½•å®ç°å‘½ä»¤ã€‚
 
-ÒÔÏÂÊÇÒ»¸öÀı×Ó£¬Ò»ÌõÃüÁî¿ªÆôËùÓĞµÄÅÀ³æ£¨spider£©
+ä»¥ä¸‹æ˜¯ä¸€ä¸ªä¾‹å­ï¼Œä¸€æ¡å‘½ä»¤å¼€å¯æ‰€æœ‰çš„çˆ¬è™«ï¼ˆspiderï¼‰
 
-1.ÔÚspiderÄ¿Â¼µÄÍ¬¼¶Ä¿Â¼ÏÂ´´½¨commands°ü£¨´øÓĞ__init__.pyÎÄ¼şµÄÎÄ¼ş¼Ğ£©
+1.åœ¨spiderç›®å½•çš„åŒçº§ç›®å½•ä¸‹åˆ›å»ºcommandsåŒ…ï¼ˆå¸¦æœ‰__init__.pyæ–‡ä»¶çš„æ–‡ä»¶å¤¹ï¼‰
 
-2.ĞÂ½¨crawlall.pyÎÄ¼ş
+2.æ–°å»ºcrawlall.pyæ–‡ä»¶
 ```
 from scrapy.commands import ScrapyCommand
 from scrapy.crawler import CrawlerRunner
@@ -112,14 +112,14 @@ class Command(ScrapyCommand):
     
   requires_project = True
 
-  # Õâ¸öº¯ÊıÊÇ¶¨ÒåÓï·¨
+  # è¿™ä¸ªå‡½æ•°æ˜¯å®šä¹‰è¯­æ³•
   def syntax(self):
     return '[options]'
    
-  # ¼òµ¥½éÉÜÕâÌõÃüÁî
+  # ç®€å•ä»‹ç»è¿™æ¡å‘½ä»¤
   def short_desc(self):
     return 'Runs all of the spiders'
-  # Ôö¼ÓÃüÁî²¹³ä
+  # å¢åŠ å‘½ä»¤è¡¥å……
   def add_options(self, parser):
     ScrapyCommand.add_options(self, parser)
     parser.add_option("-a", dest="spargs", action="append", default=[], metavar="NAME=VALUE",
@@ -136,22 +136,24 @@ class Command(ScrapyCommand):
     except ValueError:
       raise UsageError("Invalid -a value, use -a NAME=VALUE", print_help=False)
 
-  # ×îÖØÒªµÄ²¿·Ö
+  # æœ€é‡è¦çš„éƒ¨åˆ†
   def run(self, args, opts):
     # settings = get_project_settings()
-    # ÕâÀïµÄself.crawler_process¾ÍÊÇÔ´ÂëÖĞcrawler.pyÖĞµÄCrawlerProcessÀàµÄÊµÀı
+    # è¿™é‡Œçš„self.crawler_processå°±æ˜¯æºç ä¸­crawler.pyä¸­çš„CrawlerProcessç±»çš„å®ä¾‹
     spider_loader = self.crawler_process.spider_loader
-    # spiderÓ¦¸Ã¾ÍÔÚargsÕâ¸öÁĞ±íÖĞÒ²¿ÉÒÔÍ¨¹ıspider_loader.list()À´»ñÈ¡spiderÁĞ±í
+    # spideråº”è¯¥å°±åœ¨argsè¿™ä¸ªåˆ—è¡¨ä¸­ä¹Ÿå¯ä»¥é€šè¿‡spider_loader.list()æ¥è·å–spideråˆ—è¡¨
     for spidername in args or spider_loader.list():
       print "*********cralall spidername************" + spidername
-      # ¿ªÆôÃ¿Ò»¸öspider
+      # å¼€å¯æ¯ä¸€ä¸ªspider
       self.crawler_process.crawl(spidername, **opts.spargs)
-    # ¿ªÊ¼ÔËĞĞÅÀ³æ
+    # å¼€å§‹è¿è¡Œçˆ¬è™«
     self.crawler_process.start()
 ```
+3.setting.py
+`COMMANDS_MODULE = 'wdzj.commands'`
+commandsæ–‡ä»¶å¤¹æ‰€åœ¨çš„ä½ç½®
 
 
-
-ÓĞµÀÔÆ±Ê¼ÇÁ´½Ó£º
+æœ‰é“äº‘ç¬”è®°é“¾æ¥ï¼š
 
 http://note.youdao.com/noteshare?id=0011b1165ad88f1482e1206b76976027&sub=0F222EB96F984C7FBF48448B236332EC
