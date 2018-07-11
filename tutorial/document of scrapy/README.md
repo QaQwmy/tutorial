@@ -150,7 +150,9 @@ class Command(ScrapyCommand):
     self.crawler_process.start()
 ```
 3.setting.py
+
 `COMMANDS_MODULE = 'wdzj.commands'`
+
 commands文件夹所在的位置
 
 
