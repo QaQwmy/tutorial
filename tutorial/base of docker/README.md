@@ -1,4 +1,4 @@
-# docker的用途越来越广泛，现在介绍一下docker的基础用法
+# docker越来越火，现在介绍一下docker的基础用法
 
 ## 1.prepare
 
@@ -183,3 +183,4 @@ cmd命令则是在容器启动后执行，另外，一个dockerfile文件中可�
 
 `docker container cp containerID:/path/to/file`
 
+> 入门部分就到此为止了，进阶部分等我学了再更新！
