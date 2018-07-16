@@ -141,6 +141,9 @@ markdown是一种纯文本标记语言，非常好用，用来记录笔记，或
 
 ![网贷之家-陆金服](https://www.wdzj.com/wdzj/images/example/2017/03/24/20170324172131s_.jpg "网贷之家-陆金服logo")
 
+插入本地图片
+
+![学习图](img/img.jpg)
 
 # 9. 注脚
 ```
